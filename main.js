@@ -1,0 +1,17 @@
+const http = require('http');
+const request = require('request');
+const exec = require('child_process').exec;
+const  args = ["http 501"];
+
+function startNgrok () {
+exec(`./ngrok ${args}`)
+};
+
+startNgrok ();
+
+
+http.createServer(function(req, res) {
+
+res.end("PAYDAY");
+
+}).listen(501);
